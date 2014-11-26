@@ -15,7 +15,7 @@ namespace Configuration
       var bus = ServiceBusFactory.New(sbc =>
       {
         var azureNameSpace = GetConfigValue("azure-namespace", "loosely");
-        var queueUri = "azure-sb://owner:bjOAWQJalkmd9LKas0lsdklkdw4mAHwKZUJ1jKwTLdc=@" + azureNameSpace + "/MtPubSubAzureExample_" + queueName;
+        var queueUri = "azure-sb://" + azureNameSpace + "/MtPubSubAzureExample_" + queueName;
 
         sbc.ReceiveFrom(queueUri);
         SetupAzureServiceBus(sbc, azureNameSpace);
